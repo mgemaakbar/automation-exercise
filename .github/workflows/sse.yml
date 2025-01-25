@@ -48,7 +48,7 @@ jobs:
       - name: Print current directory
         run: pwd
       - name: Save coverage data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-data
           path: .coverage

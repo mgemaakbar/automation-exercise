@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 class SolveDiffusion2D:
     def __init__(self):
         """
-        Constructor of class SolveDiffusion2D 
+        Constructor of class SolveDiffusion2D
         """
         # plate size, mm
         self.w = None

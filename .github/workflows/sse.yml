@@ -1,0 +1,52 @@
+name: SSE CI Workflow
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  style_check:
+    name: style_check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install black
+        run: pip install black
+
+      - name: Run black
+        run: black --check .
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install pytest coverage
+
+      - name: Run tests with coverage
+        run: |
+          pytest --cov=. --cov-report=term-missing
+
+      - name: Save coverage data
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-data
+          path: .coverage
+          retention-days: 1

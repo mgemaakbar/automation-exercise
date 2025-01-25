@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          pytest --cov=. --cov-report=term-missing
+          coverage run -m pytest
 
       - name: Save coverage data
         uses: actions/upload-artifact@v3

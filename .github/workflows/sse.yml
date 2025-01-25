@@ -43,9 +43,10 @@ jobs:
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
-      - name: ls
-        run: ls -al
-
+      - name: Debug: Check .coverage file existence
+        run: ls -l .coverage
+      - name: Debug: Print current directory
+        run: pwd
       - name: Save coverage data
         uses: actions/upload-artifact@v3
         with:

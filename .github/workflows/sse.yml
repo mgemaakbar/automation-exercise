@@ -51,5 +51,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: coverage-data
-          path: automation-exercise-wt2425/.coverage
+          path: .coverage
           retention-days: 1

@@ -43,6 +43,12 @@ jobs:
       - name: Run tests with coverage
         run: |
           coverage run -m pytest
+      - name: View coverage report
+        run: |
+          coverage report
+      - name: Save coverage in xml
+        run: |
+          coverage xml          
       - name: Save coverage data
         uses: actions/upload-artifact@v4
         with:

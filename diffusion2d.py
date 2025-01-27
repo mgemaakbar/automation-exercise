@@ -35,7 +35,7 @@ class SolveDiffusion2D:
         self.T_hot = None
 
         # Timestep
-        self.dt = None
+        self.dt=None
 
     def initialize_domain(self, w=10.0, h=10.0, dx=0.1, dy=0.1):
         self.w = w

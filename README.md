@@ -8,5 +8,5 @@ The code used in this exercise is based on [Chapter 7 of the book "Learning Scie
 
 Please check the `LICENSE` file in this repository.
 
-![badge]
-(https://github.com/mgemaakbar/automation-exercise-wt2425/actions/workflows/sse.yml/badge.svg)
+![SSE CI/CD](https://github.com/mgemaakbar/automation-exercise-wt2425/actions/workflows/sse.yml/badge.svg)
+

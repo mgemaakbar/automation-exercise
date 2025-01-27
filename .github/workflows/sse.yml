@@ -18,13 +18,10 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install black
-        run: pip install black
-
       - name: Run black
         uses: psf/black@stable
         with:
-          args: --check .
+          options: --check --verbose
 
   test:
     name: test

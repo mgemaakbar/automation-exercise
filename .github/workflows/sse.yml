@@ -22,8 +22,9 @@ jobs:
         run: pip install black
 
       - name: Run black
-        run: black --check .
-        continue-on-error: false
+        uses: psf/black@stable
+        with:
+          args: --check .
 
   test:
     name: test

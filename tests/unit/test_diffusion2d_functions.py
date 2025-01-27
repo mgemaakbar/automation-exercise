@@ -17,7 +17,7 @@ class TestDiffusion2D(unittest.TestCase):
         solver.initialize_domain(w=5.0, h=20.0, dx=0.2, dy=0.4)
 
         expected_nx = 25
-        expected_ny = 50
+        expected_ny = 500
 
         self.assertEqual(expected_nx, solver.nx)
         self.assertEqual(expected_ny, solver.ny)

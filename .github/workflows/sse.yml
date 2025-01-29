@@ -48,13 +48,34 @@ jobs:
   coverage_report:
     name: coverage_report
     runs-on: ubuntu-latest
+    needs: test
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install coverage
+
+      - name: Download coverage data
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-data
+          path: .
+
       - name: View coverage report
         run: |
           coverage report
+
       - name: Save coverage in xml
         run: |
-          coverage xml          
+          coverage xml
+                
       - name: Save coverage xml
         uses: actions/upload-artifact@v4
         with:
